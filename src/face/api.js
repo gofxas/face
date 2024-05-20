@@ -169,8 +169,8 @@ export const Render = () => {
 	return `<svg
     viewBox="-100 -100 200 200"
     xmlns="http://www.w3.org/2000/svg"
-    width="800"
-    height="800"
+    width="500"
+    height="500"
     id="face-svg"
     >
     <defs>
