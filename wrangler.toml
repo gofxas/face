@@ -1,0 +1,4 @@
+name = "face"
+main = "src/worker.js"
+compatibility_date = "2024-05-20"
+workers_dev = true
