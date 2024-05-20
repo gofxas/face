@@ -7,9 +7,13 @@
  *
  * Learn more at https://developers.cloudflare.com/workers/
  */
-
+import { Render } from './face/api';
 export default {
-  async fetch(request, env, ctx) {
-    return new Response('Hello World!');
-  },
+	async fetch(request, env, ctx) {
+		return new Response(Render(), {
+			headers: {
+				'Content-Type': 'image/svg+xml',
+			},
+		});
+	},
 };
