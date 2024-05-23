@@ -7,13 +7,23 @@
  *
  * Learn more at https://developers.cloudflare.com/workers/
  */
+import { Router } from 'itty-router';
 import { Render } from './face/api';
-export default {
-	async fetch(request, env, ctx) {
-		return new Response(Render(), {
+
+const router = Router();
+
+router.get('/', () => new Response('访问 /api/avatar 获取头像'));
+
+router.get(
+	'/api/avatar',
+	() =>
+		new Response(Render(), {
 			headers: {
 				'Content-Type': 'image/svg+xml',
 			},
-		});
-	},
+		})
+);
+
+export default {
+	fetch: router.handle,
 };
